@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/mybutton.css" />
+        <link rel="stylesheet" type="text/css" href="css/range.css" />
+        <link rel="stylesheet" type="text/css" href="css/ionicons.css" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+    <div class="main" id="main" style="text-align: center">
+    <!--topic div-->
+            <div id="topic">
+            <p>
+                The city you live.
+            </p>
+            </div>
+            
+            <button class="button--quiet" class="btn" onClick="last();"><i class="icon ion-chevron-left"></i> Last</button>
+            <button class="button--quiet" class="btn" onClick="next();">Next<i class="icon ion-chevron-right"></i></button>
+            <img id="man" src="./img/toefl_man.png">
+    <!--timer_div div-->
+            <div id="timer_div">
+            <font size="2"><p id="claim">
+                You have 15 sec to prepare and 45 sec to answer.
+            </p></font>
+        <!--recorder div-->
+            
+            <div id="recorder">
+            <font size="10"><p id="Rec_audio_position">00:00</p></font>
+            <input type="range" class="range" value="20" max="45" id="rangeId">
+            </div>
+
+        <!--player div-->
+            <div id="player" hidden>
+            <p id="audio_position" class="smallBtn">00:00</p>
+            <button class="button--quiet" id="pauseP" class="smallBtn" onclick="pauseAudio();"><i class="icon ion-pause"></i></button>
+            <button class="button--quiet" id="stopP" class="smallBtn" onclick="stopAudio();" ><i class="icon ion-stop"></i></button>
+            <br>
+            <input type="range" class="range" max="45" value="45" id="rangeId2" onchange="rangeClick()"><br>
+             <p id="duration" hidden> 00:00 sec </p> 
+            
+            
+            </div>
+            <br /><br />
+        </div>
+
+        <p id="media" hidden>Test Area DO NOT DISABLE!!!</p>
+    <p id="test" hidden></p>
+
+    <!--mainBtns div-->
+    <div id="mainBtns">
+    <button class="button button--outline" id="canStart" onclick="recordAudio()">Start Test</button><br>
+    <button class="button button--outline" id="exId" onclick="playEx()">Example</button>
+    <button class="button button--outline" id="ansId" onclick="playAudio('myrecording.wav')">Play Ans</button>
+    </div>
+
+<!--Topics-->
+<div hidden>
+    <p class="T1">Q1. Compulsory education is required for all children before age</p>
+    <p class="T1">Q2. Describe a celebration you recently attended. Did all people have a good time on that day</p>
+    <p class="T1">Q3. Describe a person you would like to know more about</p>
+    <p class="T1">Q4. Describe an important decision you have made. Why was it important to you</p>
+</div>
+
+<div hidden>
+    <p class="EX1">https://dl.dropboxusercontent.com/u/47631918/Sk2App/1.%20Compulsory%20education%20is%20required%20for%20all%20children%20before%20age%2016.m4a</p>
+    <p class="EX1">https://dl.dropboxusercontent.com/u/47631918/Sk2App/2.%20Describe%20a%20celebration%20you%20recently%20attended.%20Did%20all%20people%20have%20a%20good%20time%20on%20that%20day.m4a</p>
+    <p class="EX1">https://dl.dropboxusercontent.com/u/47631918/Sk2App/3.%20Describe%20a%20person%20you%20would%20like%20to%20know%20more%20about.m4a</p>
+    <p class="EX1">https://dl.dropboxusercontent.com/u/47631918/Sk2App/4.%20Describe%20an%20important%20decision%20you%20have%20made.%20Why%20was%20it%20important%20to%20you.m4a</p>
+</div>
+</div>
+    </body>
+</html>
